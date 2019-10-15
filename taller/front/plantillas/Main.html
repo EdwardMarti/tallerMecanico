@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+<!--              -------Creado por-------               -->
+<!--             \(x.x )/ Anarchy \( x.x)/               -->
+<!--              ------------------------               -->
+
+<!--//    ...con el mayor de los disgustos, el benévolo señor Arciniegas.  \\                  -->
+<head>
+    <meta charset="UTF-8">  
+    <link rel="shortcut icon" href="http://drive.google.com/uc?export=view&id=1CbzDwRAhm5eMp0tlMlZCgyRB3lO3qV8D ">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>(x.x ) AnarchyCode ( x.x)</title>      
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css ">
+    <!-- Pon tus CSS propios aquÃ­ -->
+</head>
+<body>
+    <header>
+        <div class="jumbotron" style="background-color: #000; color: #aaa; padding-left: 30px">
+            <h1><img src="http://drive.google.com/uc?export=view&id=1CbzDwRAhm5eMp0tlMlZCgyRB3lO3qV8D " style="height: 40px;border-radius:50%; " class="navbar-text">An Anarchy code</h1> 
+            <p style="float: left;">En un lugar de La Mancha, de cuyo nombre no quiero acordarme...</p> 
+            <h3><a href="#" style="float: right; margin-right: 30px;"><span class="glyphicon glyphicon-off"></span></a></h3>
+        </div>
+    </header>
+
+  <div class="row" style="margin-top: 100px">
+    <div class="col col-xs-12 col-md-2 " >
+      <div class="panel-group" id="accordion">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseAdministradors">Administradors</a>
+            </h4>
+          </div>
+          <div id="collapseAdministradors" class="panel-collapse collapse in">
+            <div class="list-group">
+              <a href="javascript:preAdministradorsList('main')" class="list-group-item"><span class="glyphicon glyphicon-list"></span>    Listar</a>
+              <a href="javascript:cargaContenido('main','AdministradorsInsert.html')" class="list-group-item"><span class="glyphicon glyphicon-pencil"></span>    Insertar</a>
+            </div>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseCitas">Citas</a>
+            </h4>
+          </div>
+          <div id="collapseCitas" class="panel-collapse collapse in">
+            <div class="list-group">
+              <a href="javascript:preCitasList('main')" class="list-group-item"><span class="glyphicon glyphicon-list"></span>    Listar</a>
+              <a href="javascript:cargaContenido('main','CitasInsert.html')" class="list-group-item"><span class="glyphicon glyphicon-pencil"></span>    Insertar</a>
+            </div>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseCliente_vehiculos">Cliente_vehiculos</a>
+            </h4>
+          </div>
+          <div id="collapseCliente_vehiculos" class="panel-collapse collapse in">
+            <div class="list-group">
+              <a href="javascript:preCliente_vehiculosList('main')" class="list-group-item"><span class="glyphicon glyphicon-list"></span>    Listar</a>
+              <a href="javascript:cargaContenido('main','Cliente_vehiculosInsert.html')" class="list-group-item"><span class="glyphicon glyphicon-pencil"></span>    Insertar</a>
+            </div>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseClientes">Clientes</a>
+            </h4>
+          </div>
+          <div id="collapseClientes" class="panel-collapse collapse in">
+            <div class="list-group">
+              <a href="javascript:preClientesList('main')" class="list-group-item"><span class="glyphicon glyphicon-list"></span>    Listar</a>
+              <a href="javascript:cargaContenido('main','ClientesInsert.html')" class="list-group-item"><span class="glyphicon glyphicon-pencil"></span>    Insertar</a>
+            </div>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseComponentes">Componentes</a>
+            </h4>
+          </div>
+          <div id="collapseComponentes" class="panel-collapse collapse in">
+            <div class="list-group">
+              <a href="javascript:preComponentesList('main')" class="list-group-item"><span class="glyphicon glyphicon-list"></span>    Listar</a>
+              <a href="javascript:cargaContenido('main','ComponentesInsert.html')" class="list-group-item"><span class="glyphicon glyphicon-pencil"></span>    Insertar</a>
+            </div>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseCompras">Compras</a>
+            </h4>
+          </div>
+          <div id="collapseCompras" class="panel-collapse collapse in">
+            <div class="list-group">
+              <a href="javascript:preComprasList('main')" class="list-group-item"><span class="glyphicon glyphicon-list"></span>    Listar</a>
+              <a href="javascript:cargaContenido('main','ComprasInsert.html')" class="list-group-item"><span class="glyphicon glyphicon-pencil"></span>    Insertar</a>
+            </div>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseFacturas">Facturas</a>
+            </h4>
+          </div>
+          <div id="collapseFacturas" class="panel-collapse collapse in">
+            <div class="list-group">
+              <a href="javascript:preFacturasList('main')" class="list-group-item"><span class="glyphicon glyphicon-list"></span>    Listar</a>
+              <a href="javascript:cargaContenido('main','FacturasInsert.html')" class="list-group-item"><span class="glyphicon glyphicon-pencil"></span>    Insertar</a>
+            </div>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseMecanicos">Mecanicos</a>
+            </h4>
+          </div>
+          <div id="collapseMecanicos" class="panel-collapse collapse in">
+            <div class="list-group">
+              <a href="javascript:preMecanicosList('main')" class="list-group-item"><span class="glyphicon glyphicon-list"></span>    Listar</a>
+              <a href="javascript:cargaContenido('main','MecanicosInsert.html')" class="list-group-item"><span class="glyphicon glyphicon-pencil"></span>    Insertar</a>
+            </div>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseMigrations">Migrations</a>
+            </h4>
+          </div>
+          <div id="collapseMigrations" class="panel-collapse collapse in">
+            <div class="list-group">
+              <a href="javascript:preMigrationsList('main')" class="list-group-item"><span class="glyphicon glyphicon-list"></span>    Listar</a>
+              <a href="javascript:cargaContenido('main','MigrationsInsert.html')" class="list-group-item"><span class="glyphicon glyphicon-pencil"></span>    Insertar</a>
+            </div>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseProductos">Productos</a>
+            </h4>
+          </div>
+          <div id="collapseProductos" class="panel-collapse collapse in">
+            <div class="list-group">
+              <a href="javascript:preProductosList('main')" class="list-group-item"><span class="glyphicon glyphicon-list"></span>    Listar</a>
+              <a href="javascript:cargaContenido('main','ProductosInsert.html')" class="list-group-item"><span class="glyphicon glyphicon-pencil"></span>    Insertar</a>
+            </div>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseProveedors">Proveedors</a>
+            </h4>
+          </div>
+          <div id="collapseProveedors" class="panel-collapse collapse in">
+            <div class="list-group">
+              <a href="javascript:preProveedorsList('main')" class="list-group-item"><span class="glyphicon glyphicon-list"></span>    Listar</a>
+              <a href="javascript:cargaContenido('main','ProveedorsInsert.html')" class="list-group-item"><span class="glyphicon glyphicon-pencil"></span>    Insertar</a>
+            </div>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseServicios">Servicios</a>
+            </h4>
+          </div>
+          <div id="collapseServicios" class="panel-collapse collapse in">
+            <div class="list-group">
+              <a href="javascript:preServiciosList('main')" class="list-group-item"><span class="glyphicon glyphicon-list"></span>    Listar</a>
+              <a href="javascript:cargaContenido('main','ServiciosInsert.html')" class="list-group-item"><span class="glyphicon glyphicon-pencil"></span>    Insertar</a>
+            </div>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseVehiculo_servicios">Vehiculo_servicios</a>
+            </h4>
+          </div>
+          <div id="collapseVehiculo_servicios" class="panel-collapse collapse in">
+            <div class="list-group">
+              <a href="javascript:preVehiculo_serviciosList('main')" class="list-group-item"><span class="glyphicon glyphicon-list"></span>    Listar</a>
+              <a href="javascript:cargaContenido('main','Vehiculo_serviciosInsert.html')" class="list-group-item"><span class="glyphicon glyphicon-pencil"></span>    Insertar</a>
+            </div>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseVehiculos">Vehiculos</a>
+            </h4>
+          </div>
+          <div id="collapseVehiculos" class="panel-collapse collapse in">
+            <div class="list-group">
+              <a href="javascript:preVehiculosList('main')" class="list-group-item"><span class="glyphicon glyphicon-list"></span>    Listar</a>
+              <a href="javascript:cargaContenido('main','VehiculosInsert.html')" class="list-group-item"><span class="glyphicon glyphicon-pencil"></span>    Insertar</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> 
+    <div class="container">
+      <div id="main" class="col col-xs-12 col-md-10 " >
+      </div> 
+    </div> 
+  </div>
+    <footer style="background-color: black; color: white; text-align: center; padding: 10px; clear: both;">
+        <p>Anarchy Â© 2018 <br>Todos los derechos y algunos izquierdos reservados</p>
+    </footer>
+    <script src="js/Ajax.js "></script>
+    <script src="js/ViewManager.js "></script>
+    <script src="js/HtmlBuilder.js "></script>
+    <!-- Pon tus js aquÃ­ -->    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js "></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js "></script>
+
+    <!-- Carga de datos inicial -->
+    <script type="text/javascript">
+        cargaContenido('main','AdministradorsInsert.html');
+    </script>
+</body>
+
+<!-- That`s all folks! -->
+</html>
