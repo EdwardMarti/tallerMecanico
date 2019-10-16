@@ -49,4 +49,28 @@ function ajax(url, datos, rta) {
 // 
 //}
 
+//<editor-fold defaultstate="collapsed" desc=" **********   Metodos Clientes *********** ">
+
+
+function Clientes_Listar() {  /**  tabla de datos  */
+    var url = "Clientes_list.php";
+    var datos = {};
+    var rta = "#mostrarcontenido";
+    ajax(url, datos, rta);
+//enviar(formData, rutaBack ,postClientesList); 
+  enviar("",'../back/controller/Clientes_List.php',postClientesList); 
+}
+
+function Clientes_Registrar() {  /**  tabla de datos  */
+    var url = "ClientesInsert.php";
+    var datos = {};
+    var rta = "#mostrarcontenido";
+    ajax(url, datos, rta);
+
+//enviar("",'../back/controller/empleado_lis.php',postEmpleadoList); 
+}
+
+
+//</editor-fold>
+
 

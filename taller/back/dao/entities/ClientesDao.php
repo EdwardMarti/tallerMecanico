@@ -28,7 +28,7 @@ private $cn;
      * @throws NullPointerException Si los objetos correspondientes a las llaves foraneas son null
      */
   public function insert($clientes){
-      $id=$clientes->getId();
+ //     $id=$clientes->getId();
 $nombres=$clientes->getNombres();
 $apellidos=$clientes->getApellidos();
 $cedula=$clientes->getCedula();
@@ -36,12 +36,12 @@ $edad=$clientes->getEdad();
 $correo=$clientes->getCorreo();
 $telefono=$clientes->getTelefono();
 $fecha_nacimiento=$clientes->getFecha_nacimiento();
-$created_at=$clientes->getCreated_at();
-$updated_at=$clientes->getUpdated_at();
+//$created_at=$clientes->getCreated_at();
+//$updated_at=$clientes->getUpdated_at();
 
       try {
-          $sql= "INSERT INTO `clientes`( `id`, `nombres`, `apellidos`, `cedula`, `edad`, `correo`, `telefono`, `fecha_nacimiento`, `created_at`, `updated_at`)"
-          ."VALUES ('$id','$nombres','$apellidos','$cedula','$edad','$correo','$telefono','$fecha_nacimiento','$created_at','$updated_at')";
+          $sql= "INSERT INTO `clientes`(  `nombres`, `apellidos`, `cedula`, `edad`, `correo`, `telefono`, `fecha_nacimiento`)"
+          ."VALUES ('$nombres','$apellidos','$cedula','$edad','$correo','$telefono','$fecha_nacimiento')";
           return $this->insertarConsulta($sql);
       } catch (SQLException $e) {
           throw new Exception('Primary key is null');
@@ -157,8 +157,73 @@ $updated_at=$clientes->getUpdated_at();
       return null;
       }
   }
+  
+  
+  // <editor-fold defaultstate="collapsed" desc="Metodos Adicionales">
+ 
+    public function listAll_Clientes(){
+      $lista = array();
+      try {
+          $sql ="SELECT `id`, `nombres`, `apellidos`, `cedula`, `correo`, `telefono`"
+          ."FROM `clientes`"
+          ."WHERE 1";
+          $data = $this->ejecutarConsulta($sql);
+          for ($i=0; $i < count($data) ; $i++) {
+              $clientes= new Clientes();
+          $clientes->setId($data[$i]['id']);
+          $clientes->setNombres($data[$i]['nombres']);
+        $clientes->setApellidos($data[$i]['apellidos']);
+          $clientes->setCedula($data[$i]['cedula']);
+      //    $clientes->setEdad($data[$i]['edad']);
+          $clientes->setCorreo($data[$i]['correo']);
+          $clientes->setTelefono($data[$i]['telefono']);
+      //    $clientes->setFecha_nacimiento($data[$i]['fecha_nacimiento']);
+       //   $clientes->setCreated_at($data[$i]['created_at']);
+       //   $clientes->setUpdated_at($data[$i]['updated_at']);
 
-      public function insertarConsulta($sql){
+          array_push($lista,$clientes);
+          }
+      return $lista;
+      } catch (SQLException $e) {
+          throw new Exception('Primary key is null');
+      return null;
+      }
+  }
+  
+    public function listAll_ClientesDetalles($id){
+      $lista = array();
+      try {
+          $sql ="SELECT `id`, `nombres`, `apellidos`, `cedula`, `correo`, `telefono`, `fecha_nacimiento`"
+          ."FROM `clientes`"
+          ."WHERE 1";
+          $data = $this->ejecutarConsulta($sql);
+          for ($i=0; $i < count($data) ; $i++) {
+              $clientes= new Clientes();
+          $clientes->setId($data[$i]['id']);
+          $clientes->setNombres($data[$i]['nombres']);
+        $clientes->setApellidos($data[$i]['apellidos']);
+          $clientes->setCedula($data[$i]['cedula']);
+      //    $clientes->setEdad($data[$i]['edad']);
+          $clientes->setCorreo($data[$i]['correo']);
+          $clientes->setTelefono($data[$i]['telefono']);
+          $clientes->setFecha_nacimiento($data[$i]['fecha_nacimiento']);
+       //   $clientes->setCreated_at($data[$i]['created_at']);
+       //   $clientes->setUpdated_at($data[$i]['updated_at']);
+
+          array_push($lista,$clientes);
+          }
+      return $lista;
+      } catch (SQLException $e) {
+          throw new Exception('Primary key is null');
+      return null;
+      }
+  }
+  
+  
+// </editor-fold>
+
+
+  public function insertarConsulta($sql){
           $this->cn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
           $sentencia=$this->cn->prepare($sql);
           $sentencia->execute(); 

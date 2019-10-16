@@ -42,9 +42,9 @@ class ClientesFacade {
    * @param created_at
    * @param updated_at
    */
-  public static function insert( $id,  $nombres,  $apellidos,  $cedula,  $edad,  $correo,  $telefono,  $fecha_nacimiento,  $created_at,  $updated_at){
+  public static function insert( $nombres,  $apellidos,  $cedula,  $edad,  $correo,  $telefono,  $fecha_nacimiento){
       $clientes = new Clientes();
-      $clientes->setId($id); 
+      //$clientes->setId($id); 
       $clientes->setNombres($nombres); 
       $clientes->setApellidos($apellidos); 
       $clientes->setCedula($cedula); 
@@ -52,8 +52,8 @@ class ClientesFacade {
       $clientes->setCorreo($correo); 
       $clientes->setTelefono($telefono); 
       $clientes->setFecha_nacimiento($fecha_nacimiento); 
-      $clientes->setCreated_at($created_at); 
-      $clientes->setUpdated_at($updated_at); 
+    //  $clientes->setCreated_at($created_at); 
+    //  $clientes->setUpdated_at($updated_at); 
 
      $FactoryDao=new FactoryDao(self::getGestorDefault());
      $clientesDao =$FactoryDao->getclientesDao(self::getDataBaseDefault());
@@ -138,7 +138,21 @@ class ClientesFacade {
      $clientesDao->close();
      return $result;
   }
+  public static function listAll_Clientes(){
+     $FactoryDao=new FactoryDao(self::getGestorDefault());
+     $clientesDao =$FactoryDao->getclientesDao(self::getDataBaseDefault());
+     $result = $clientesDao->listAll_Clientes();
+     $clientesDao->close();
+     return $result;
+  }
 
+    public static function listAll_ClientesDetalles($id){
+     $FactoryDao=new FactoryDao(self::getGestorDefault());
+     $clientesDao =$FactoryDao->getclientesDao(self::getDataBaseDefault());
+     $result = $clientesDao->listAll_ClientesDetalles($id);
+     $clientesDao->close();
+     return $result;
+  }
 
 }
 //That`s all folks!

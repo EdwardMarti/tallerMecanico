@@ -10,7 +10,7 @@
               <div align=center class="panel-heading"><h3 class="panel-title">Registrar clientes</h3></div>
               <div align=center class="panel-body">
                   <form role="form" id="ClientesInsert">
-                      <div class="form-group">
+                      <div style="display: none" class="form-group">
                           <label for="Inputid">id</label>
                           <input type="text" name="id" class="form-control" id="Inputid" placeholder="id" required>
                        </div>
@@ -26,7 +26,7 @@
                           <label for="Inputcedula">cedula</label>
                           <input type="text" name="cedula" class="form-control" id="Inputcedula" placeholder="cedula">
                        </div>
-                      <div class="form-group">
+                      <div  class="form-group">
                           <label for="Inputedad">edad</label>
                           <input type="text" name="edad" class="form-control" id="Inputedad" placeholder="edad">
                        </div>
@@ -42,19 +42,108 @@
                           <label for="Inputfecha_nacimiento">fecha_nacimiento</label>
                           <input type="text" name="fecha_nacimiento" class="form-control" id="Inputfecha_nacimiento" placeholder="fecha_nacimiento">
                        </div>
-                      <div class="form-group">
-                          <label for="Inputcreated_at">created_at</label>
-                          <input type="text" name="created_at" class="form-control" id="Inputcreated_at" placeholder="created_at">
-                       </div>
-                      <div class="form-group">
-                          <label for="Inputupdated_at">updated_at</label>
-                          <input type="text" name="updated_at" class="form-control" id="Inputupdated_at" placeholder="updated_at">
-                       </div>
-                        <a href="javascript:preClientesInsert('ClientesInsert')" class="btn btn-warning">Registrar</a>
+                     
+                   
                    </form>
                </div><!-- panel-body -->
           </div> <!-- panel -->
       </div>
+
+
+
+
+  <script>
+   
+    
+    function registraraPersona(){
+      
+  
+        var url1 = "../back/controller/persona_insert.php";
+      //  console.log($("#PersonaInsert").serialize());
+      
+    //  echo jason_encode('error');
+    
+        $.ajax({                        
+           type: "POST",                 
+           url: url1,                     
+           data: $("#PersonaInsert").serialize(), 
+       
+                 
+           success: function(data){
+     
+               
+               if(data==1){
+                   
+        
+                   
+              aceptarPersona();
+           
+               }if (data==2){
+                   errorPersona();
+               }else{
+                  errorPersona();
+               }
+                          
+           }
+       });
+   
+};
+
+     function aceptarPersona(){
+  
+
+       swal({
+                        title: "Registro",
+                        text: "Registro Exitoso!",
+                        type: "success",
+                       // showCancelButton: true,
+                        confirmButtonColor: "#1ab394",
+                        confirmButtonText: "Ok",
+                       // cancelButtonText: "No, cancel plx!",
+                      //   closeOnConfirm: false,
+                        closeOnCancel: false },
+                    function (isConfirm) {
+                        if (isConfirm) {
+                   
+                      Clientes_Listar();
+                  
+                        } 
+                        else {
+                            swal("Cancelled", "Your imaginary file is safe :)", "error");
+                        }
+                    });
+   
+};
+
+
+     function errorPersona(){
+  
+
+       swal({
+                        title: "Error",
+                        text: "Complete los Campos!",
+                        type: "error",
+                       // showCancelButton: true,
+                        confirmButtonColor: "#dd6b55",
+                        confirmButtonText: "Ok",
+                       // cancelButtonText: "No, cancel plx!",
+                      //   closeOnConfirm: false,
+                        closeOnCancel: false },
+                    function (isConfirm) {
+                        if (isConfirm) {
+                          // alert('mySelect2'+mySelect2);
+                        //  console.log("mySelect2");
+                    //  Persona_Listar();
+                     //  swal("Deleted!", "Your imaginary file has been deleted.", "success");
+                        } 
+                        else {
+                            swal("Cancelled", "Your imaginary file is safe :)", "error");
+                        }
+                    });
+   
+};
+
+</script>
 
 <!-- That`s all folks! -->
 </html>

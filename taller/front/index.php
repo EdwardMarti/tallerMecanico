@@ -63,7 +63,7 @@
 
                         
                         <li>
-                    <a onclick="Persona_Listar()"><i class="fa fa-laptop"></i> <span class="nav-label">Usuarios Sistema</span></a>
+                    <a onclick="Clientes_Listar()"><i class="fa fa-laptop"></i> <span class="nav-label">Clientes </span></a>
                 </li>
                         <li>
                             <a href="#"><i class="fa fa-th-large"></i> <span class="nav-label">Reportes</span> <span class="fa arrow"></span></a>

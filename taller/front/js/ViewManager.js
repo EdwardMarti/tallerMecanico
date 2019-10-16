@@ -222,6 +222,8 @@ function preClientesList(container){
 
             for(var i=1; i < Object.keys(json).length; i++) {   
                 var Clientes = json[i];
+                 Clientes.viewHrefB = 'mostrarTodo("'+Clientes.id+'");';
+                 Clientes.updateHrefB = 'mostrarActualizar("'+Clientes.id+'");';
                 //----------------- Para una tabla -----------------------
                 document.getElementById("ClientesList").appendChild(createTR(Clientes));
                 //-------- Para otras opciones ver htmlBuilder.js ---------
@@ -232,6 +234,10 @@ function preClientesList(container){
      }else{
          alert("Hubo un errror interno ( u.u)\n"+result);
      }
+     
+     
+     
+     
 }
 
 ////////// COMPONENTES \\\\\\\\\\
