@@ -80,7 +80,7 @@
           <div class="panel panel-default">
       <!--        <div align=center class="panel-heading"><h3 class="panel-title">Registrar clientes</h3></div>-->
               <div align=center class="panel-body">
-               
+                  <form role="form" id="ClientesReset">
                        <div class="row">
                            <div class="col-lg-6">
                                  <div class="form-group">
@@ -120,7 +120,7 @@
           
                   
                </div><!-- panel-body -->
-              
+              </form>
           </div> <!-- panel -->
       </div>
        
@@ -218,6 +218,7 @@
     </script>
     <script>
         function mostrarTodo(idp) {
+     
                // console.log(idp);
                 cargarCliente(idp);
                $('#myModalDetalles').addClass(' data-backdrop="static" data-keyboard="false"');
@@ -225,27 +226,24 @@
                
         }
         
-          function cargarCliente(empresa){      
+          function cargarCliente(empresa){  
+//              console.log(empresa);
+                 //  document.getElementById("ClientesReset").reset();
+        //  $("#ClientesReset").reset();
+        
         $.get('../back/controller/Clientes_Detalles.php',{'empresa':empresa},function(depa){      
+            
            depa = JSON.parse(depa);
-        //   console.log();
+  
            
-         
+             $("#Inputnombres").val(depa[1].nombres);
+              $("#Inputapellidos").val(depa[1].apellidos);
+              $("#Inputcedula").val(depa[1].cedula);
+              $("#Inputcorreo").val(depa[1].correo);
+              $("#Inputtelefono").val(depa[1].telefono);
+              $("#Inputfecha_nacimiento").val(depa[1].fecha_nacimiento);
           
-       
-//          mySelect.appendChild(createOPTION(-1,'SELECCIONE'));
-//          depa = JSON.parse(depa);
-         for (var i = 1 ; i < depa.length; i++) {
-              $("#Inputnombres").val(depa[i].nombres);
-              $("#Inputapellidos").val(depa[i].apellidos);
-              $("#Inputcedula").val(depa[i].cedula);
-              $("#Inputcorreo").val(depa[i].correo);
-              $("#Inputtelefono").val(depa[i].telefono);
-              $("#Inputfecha_nacimiento").val(depa[i].fecha_nacimiento);
-            //  document.getElementById("Inputnombres")=depa[i].nombres;
-            //  mySelect.appendChild(createOPTION(depa[i].idcargo,depa[i].nom_cargo));
-            }  
-          
+ 
         }); 
       }
     </script>

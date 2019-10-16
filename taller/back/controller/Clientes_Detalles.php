@@ -10,8 +10,9 @@ include_once realpath('../facade/ClientesFacade.php');
 
 
 
-//$id= $_GET['empresa'];
-$id="1";
+$id= $_GET['empresa'];
+//var_dump($id);
+//$id="1";
 //$id= $_POST['empresa'];
   
         $list=ClientesFacade::listAll_ClientesDetalles($id);
@@ -24,7 +25,7 @@ $id="1";
 	    \"cedula\":\"{$Clientes->getcedula()}\",
 	    \"correo\":\"{$Clientes->getcorreo()}\",
 	    \"telefono\":\"{$Clientes->gettelefono()}\",
-                 \"fecha_nacimiento\":\"{$Clientes->getfecha_nacimiento()}\"
+           \"fecha_nacimiento\":\"{$Clientes->getfecha_nacimiento()}\"
 	 	       },";
         }
 

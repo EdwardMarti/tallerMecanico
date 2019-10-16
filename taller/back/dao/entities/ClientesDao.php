@@ -195,7 +195,7 @@ $updated_at=$clientes->getUpdated_at();
       try {
           $sql ="SELECT `id`, `nombres`, `apellidos`, `cedula`, `correo`, `telefono`, `fecha_nacimiento`"
           ."FROM `clientes`"
-          ."WHERE 1";
+          ."WHERE `id`=$id ";
           $data = $this->ejecutarConsulta($sql);
           for ($i=0; $i < count($data) ; $i++) {
               $clientes= new Clientes();
